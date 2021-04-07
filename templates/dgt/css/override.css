@@ -1,0 +1,346 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 14px;
+    line-height: 22px;
+}
+
+h1, h2, h3, h4, h5, h6, .site-title {
+        font-family: 'Raleway', sans-serif;
+        text-transform: uppercase;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin: 8px 0 20px 0;
+}
+
+.container-fluid {
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.footer {
+    padding-top: 10px;
+    background-color: #222;
+    font-size: 15px;
+}
+
+.footer p {
+    color: #FFF;
+}
+
+.footer a {
+    color: #00B2A9;
+    font-weight: bold;
+}
+
+
+.footer .nav > li > a, .footer .nav > li > a {
+    border-bottom: 2px solid transparent;
+}
+
+.footer .nav > li > a:hover,
+.footer .nav > li > a:focus {
+	text-decoration: none;
+    background-color: inherit;
+    color: #00B2A9;
+}
+
+.footer {padding-top: 10px;margin-top:50px;}
+.footer .nav li {float: left;}
+.footer .nav li a{padding-left: 10px; padding-right: 10px;}
+
+.menu-inf {
+    float: right;
+}
+
+.menu-inf li a {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+ul.menu-inf li {
+    border-left: 1px solid #CCCCCC;
+}
+
+ul.menu-inf li:first-child {
+    border-width: 0px;
+}
+
+
+.navigation a{
+    font-size: 1.2em;
+}
+
+.navigation .nav-child a {
+    font-size: 1.4em;
+}
+
+.navigation {
+    background: rgba(0,250,237,0.37);
+background: -moz-linear-gradient(left, rgba(0,250,237,0.37) 0%, rgba(240,240,240,0.64) 43%, rgba(240,240,240,1) 100%);
+background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,250,237,0.37)), color-stop(43%, rgba(240,240,240,0.64)), color-stop(100%, rgba(240,240,240,1)));
+background: -webkit-linear-gradient(left, rgba(0,250,237,0.37) 0%, rgba(240,240,240,0.64) 43%, rgba(240,240,240,1) 100%);
+background: -o-linear-gradient(left, rgba(0,250,237,0.37) 0%, rgba(240,240,240,0.64) 43%, rgba(240,240,240,1) 100%);
+background: -ms-linear-gradient(left, rgba(0,250,237,0.37) 0%, rgba(240,240,240,0.64) 43%, rgba(240,240,240,1) 100%);
+background: linear-gradient(to right, rgba(0,250,237,0.37) 0%, rgba(240,240,240,0.64) 43%, rgba(240,240,240,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00faed', endColorstr='#f0f0f0', GradientType=1 );
+}
+.nav-pills>li>a {
+    text-transform: uppercase;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+.nav-pills > li > a, .navigation .nav-child::before, .icono, .footer .nav > li > a, .footer .nav > li > a {
+    -webkit-transition: all 0.2s ease-in; /* Safari */
+    transition: all 0.2s ease-in;
+}
+
+.nav-pills>.active>a,.nav-pills>.active>a:hover,.nav-pills>.active>a:focus {
+
+}
+
+.navigation ul.nav-pills li:nth-child(1)>a {
+    background-color: #00B2A9;
+}
+
+.navigation ul.nav-pills li:nth-child(2)>a {
+    background-color: #BE9D56;
+}
+
+.navigation ul.nav-pills li:nth-child(3)>a {
+    background-color: #aaa;
+}
+
+.navigation .nav-child a {
+    background-color: #fff !important;
+}
+
+.navigation ul.nav-pills li a:hover {
+    opacity: 0.8;
+	filter: alpha(opacity = 80);
+}
+
+.logous {
+    padding-top: 10px;
+}
+
+.logous img {
+    max-width: 100px;
+    max-height: 100px;
+}
+
+.thorarios tr td {
+    vertical-align: middle;
+}
+
+.thorarios tr td strong {
+    color: #888888;
+}
+
+.menu-nav {
+    width: 100%;
+    z-index: 100;
+    min-height: 30px;
+}
+
+.t50 table th:first-child, .t50 table td:first-child {
+    width: 60%;
+}
+
+.thorarios th:first-child {
+    width: 40%;
+}
+
+.clear-both {
+    clear: both;
+}
+
+.t50 table th p, .t50 table td p {
+    text-align: left;
+}
+
+.sige li {
+    background-image: none !important;
+    overflow-x: visible;
+    overflow-y: hidden;
+    padding-left: 0px !important;
+}
+
+.iconos span {
+    font-size: 24px;
+}
+
+.banner {
+    padding-top: 15px;
+}
+
+@media ( min-width : 980px) {
+    .navigation .nav-pills > li {
+        width: 33.3333%;
+        text-align: center;
+    }
+}
+
+.navigation .nav-child {
+    width: 100%;
+}
+
+.nav-child li {
+    border-bottom: 1px solid #efefef;
+}
+
+.search {
+    background-image: url("../images/search.png");
+    background-repeat: no-repeat;
+    background-position: left center;
+    padding-left: 30px;
+    float: right;
+}
+
+.header-search {
+    margin-top: 10px;
+}
+
+.search form {
+    margin: 2px;
+}
+
+.top {
+    margin-top: 20px;
+}
+
+.nav-pills > li > a:hover {
+    background-color: inherit;
+    
+}
+
+.tdocumentos {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.tdocumentos tr th, .tdocumentos .th {
+    text-align: center;
+    border-bottom: 3px solid rgb(48, 139, 132);
+    border-top: 1px solid #dedede;
+    border-left: 1px solid #dedede;
+    border-right: 1px solid #dedede;
+    padding: 10px;
+}
+
+.tdocumentos tr td, .tdocumentos .td {
+    border: 1px solid rgb(48, 139, 132);
+    padding: 10px;
+}
+
+a.lndtitle {
+    color: #C0A66D;
+}
+
+.lnd_espacio {
+    width: 6%;
+}
+
+a.lndtitle {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+a.lndtitle:hover {
+    color: #20B5AE;
+}
+@media (min-width: 768px) {
+    .table-row {
+        display: table;
+        width: 100%;
+    }
+    
+    .table-row .div_lnd_intro, .table-row .lnd_espacio {
+        display: table-cell;
+    }
+    .table-row .div_lnd_intro {
+        width: 47%;
+    }
+
+    .menu-nav.scrolled {
+        position: fixed;
+        top: 0;
+    }
+}
+
+
+.table-row .div_lnd_intro {
+    padding-bottom: 15px;
+    padding-top: 5px;
+    border-bottom: 1px solid #dedede;
+}
+
+.lnd_text {
+    font-size: 0.8em;
+}
+
+.lnd_date {
+    padding-top: 2px;
+}
+
+.foto-pdi {
+    float: right;
+    max-width: 100px;
+}
+
+.field-entry {
+    padding-bottom: 5px;
+}
+
+.field-label {
+    font-weight: bold;
+}
+
+.directorio ul li {
+    float: left;
+    padding-left: 5px;
+    padding-right: 5px;
+    border: 2px solid #28B7AF;
+    border-radius: 10px;
+    margin-right: 5px;
+    background-image: none !important;
+}
+
+.directorio ul li h4 {
+    margin: 1px;
+}
+
+.news-1 {
+    animation-delay: 200ms;
+}
+
+.news-2 {
+    animation-delay: 400ms;
+}
+
+.news-3 {
+    animation-delay: 600ms;
+}
+
+.news-4 {
+    animation-delay: 800ms;
+}
+
+.news-5 {
+    animation-delay: 1000ms;
+}
+
+.news-6 {
+    animation-delay: 1200ms;
+}
+
+.nav-child {
+    -webkit-transition: all 1s ease-in-out;  /* Chrome 1-25, Safari 3.2+ */
+     -moz-transition: all 1s ease-in-out;  /* Firefox 4-15 */
+       -o-transition: all 1s ease-in-out;  /* Opera 10.50–12.00 */
+          transition: all 1s ease-in-out;  /* Chrome 26, Firefox 16+, IE 10+, Opera     12.50+ */
+}
+}

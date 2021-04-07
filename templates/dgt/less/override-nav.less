@@ -1,0 +1,231 @@
+// Color variables (appears count calculates by raw css)
+@color0: #cccccc; // Appears 3 times
+@color1: #ffffff; // Appears 3 times
+@color2: #555; // Appears 2 times
+@color3: #f5f5f5; // Appears 2 times
+@color4: #eeeeee; // Appears 2 times
+
+.nav-list > .active > a,
+.nav-list > .active > a:hover,
+.nav-list > .active > a:focus {
+  background-color: @color2;
+}
+
+#sidebar {
+	.sidebar-nav {
+		background-color: #efefef;
+	}
+	ul.nav-child {
+		.active {
+			a {
+				font-weight: bold;
+			}
+		}
+		a {
+			border-bottom:1px solid rgba(0,0,0,0.06);
+			&:before {
+				content:"\e227";
+				font-family:'IcoMoon';
+				font-size:0.45rem;
+				font-size:7.2px;
+				font-weight:900;
+				left:12px;
+				opacity:0.7;
+				position:absolute;
+				top:8px;
+				transform:translate3d(-1px,0,0);
+				color: #C0A66D;
+			}
+		}
+	}
+}
+
+ul.nav-list {
+	li {
+		display:block;
+		margin:0;
+		padding:0;
+		position:relative;
+		a {
+			border-bottom:1px solid rgba(0,0,0,0.06);
+			color:@color2;
+			display:block;
+			font-size:0.9em;
+			line-height:20px;
+			padding:8px 45px 8px 45px;
+			text-decoration:none;
+			transition:background 0.1s;
+			&:before {
+				content:"\e006";
+				font-family:'IcoMoon';
+				font-size:0.45rem;
+				font-size:7.2px;
+				font-weight:900;
+				left:12px;
+				opacity:0.7;
+				position:absolute;
+				top:8px;
+				transform:translate3d(-1px,0,0);
+			}
+			&:hover {
+				text-decoration:none;
+				before {
+					-webkit-animation-duration:500ms;
+					-webkit-animation-iteration-count:infinite;
+					-webkit-animation-name:arrowLeftRight;
+					animation-duration:500ms;
+					animation-iteration-count:infinite;
+					animation-name:arrowLeftRight;
+				}
+				i[class*="fa-chevron"] {
+					-webkit-animation-duration:500ms;
+					-webkit-animation-iteration-count:infinite;
+					-webkit-animation-name:arrowLeftRight;
+					animation-duration:500ms;
+					animation-iteration-count:infinite;
+					animation-name:arrowLeftRight;
+				}
+			}
+			i[class*="fa-chevron"] {
+				font-size:0.5rem;
+				font-size:8px;
+				opacity:0.8;
+				position:relative;
+				top:-1px;
+			}
+		}
+		ul {
+			list-style:none;
+			margin:0 0 0 25px;
+			padding:0;
+		}
+		&:last-child {
+			a {
+				border-bottom:0;
+			}
+		}
+	}
+	li>a.active {
+		font-weight:bold;
+	}
+}
+ul.nav-list.hide-not-active {
+	li {
+		ul {
+			display:none;
+		}
+	}
+	li.active {
+		ul {
+			display:block;
+		}
+	}
+}
+ul.nav-list.show-bg-active {
+	.active>a {
+		background-color:@color3;
+		&:hover {
+			background-color:@color4;
+		}
+	}
+	a.active {
+		background-color:@color3;
+		&:hover {
+			background-color:@color4;
+		}
+	}
+}
+ul.nav-list.no-arrows {
+	li {
+		a {
+			&:before {
+				content:none;
+			}
+		}
+	}
+}
+ul.nav-list-simple {
+	li {
+		display:block;
+		margin:0;
+		padding:0;
+		position:relative;
+		a {
+			border-bottom:1px solid rgba(0,0,0,0.07);
+			color:@color2;
+			display:block;
+			font-size:0.9em;
+			line-height:20px;
+			padding:8px 0;
+			text-decoration:none;
+			transition:background 0.1s;
+			transition:ease padding 300ms;
+		}
+		&:hover {
+			a {
+				padding-left:4px;
+			}
+		}
+		ul {
+			list-style:none;
+			margin:0 0 0 25px;
+			padding:0;
+		}
+	}
+	li>a.active {
+		font-weight:bold;
+	}
+}
+ul.narrow {
+	li {
+		a {
+			padding:4px 0;
+		}
+	}
+}
+ul.nav-pills>li>a.active {
+	background-color:@color0;
+	color:@color1;
+	&:hover {
+		background-color:@color0;
+		color:@color1;
+	}
+	&:focus {
+		background-color:@color0;
+		color:@color1;
+	}
+}
+ul.nav-child {
+	li {
+		a {
+			padding-left:30px;
+			text-align:left;
+		}
+	}
+}
+
+.nav-pills > .active > a, .nav-pills > .active > a:hover, .nav-pills > .active > a:focus {
+	background-color: #ffffff;
+	color: #555;
+}
+
+.btn-navbar {
+	background: none!important;
+	border: none!important;
+    box-shadow: none!important;
+    padding: 10px;
+    &:hover {
+    	background: none;
+	    border: none;
+	    box-shadow: none;
+    }
+    .icon-bar {
+    	width: 40px!important;
+    	height: 6px!important;
+    	
+    }
+}
+
+.btn-navbar .icon-bar + .icon-bar {
+  margin-top: 5px;
+}
