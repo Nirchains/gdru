@@ -54,6 +54,9 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 $mail = $this->item->jcfields["1"]->rawvalue;
 $web_personal = $this->item->jcfields["13"]->rawvalue;
 $sisius = $this->item->jcfields["12"]->rawvalue;
+$orcid = $this->item->jcfields["14"]->rawvalue;
+$dialnet = $this->item->jcfields["35"]->rawvalue;
+$linkedin = $this->item->jcfields["35"]->rawvalue;
 
 echo '<p class="text-center">'.($this->item->jcfields["10"]->rawvalue). '</p>';
 echo '<div class="ico-vinculos">';
@@ -67,8 +70,17 @@ if ($mail != '') {
 if ($web_personal != '') {
 	echo '<a href="' . $web_personal. '"><img src="/images/icons/web_personal.png" alt="Web personal" width="25" height="25"></a>';
 }
-if ($web_personal != '') {
-	echo '<a href="' . $web_personal. '"><img src="/images/icons/marca_sisius1.jpeg" alt="marca sisius1" width="25" height="25"></a>';
+if ($sisius != '') {
+	echo '<a href="' . $sisius. '"><img src="/images/icons/marca_sisius1.jpeg" alt="marca sisius1" width="25" height="25"></a>';
+}
+if ($orcid != '') {
+	echo '<a href="' . $orcid. '"><img src="/images/icons/ORCID.png" alt="ORCID" width="25" height="25"></a>';
+}
+if ($dialnet != '') {
+	echo '<a href="' . $dialnet. '"><img src="/images/icons/dialnet.png" alt="Dialnet" width="25" height="25"></a>';
+}
+if ($linkedin != '') {
+	echo '<a href="' . $linkedin. '"><img src="/images/icons/linkedin.png" alt="Linkedin" width="25" height="25"></a>';
 }
 
 

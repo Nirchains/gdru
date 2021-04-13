@@ -4789,6 +4789,17 @@ input, textarea, .uneditable-input {
   margin-left:0;
   width:100%;
 }
+.destacado, .primario { color:#322D66; }
+.box-destacado { background-color:#322D66; }
+.box-destacado p { color:#ffffff; }
+.full-width {
+  width:100vw;
+  position:relative;
+  left:50%;
+  right:50%;
+  margin-left:-50vw;
+  margin-right:-50vw;
+}
 h1 {
   font-family:'Century Gothic', sans-serif;
   text-transform:uppercase;
@@ -5177,6 +5188,7 @@ a:hover { text-decoration:none; }
   background-position:left center;
   padding-left:30px;
   float:right;
+  padding-top:7px;
 }
 .search form { margin:2px; }
 .top { margin-top:20px; }
@@ -5411,7 +5423,7 @@ body.site.fluid { background-color:#ffffff; }
 .header .finder .btn { margin-top:0px; }
 .navigation {
   padding:0px;
-  margin-bottom:0px;
+  margin-bottom:5px;
 }
 .navigation .nav-pills { margin-bottom:0; }
 .hero-unit { background-color:#08C; }
