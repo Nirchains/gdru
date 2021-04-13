@@ -147,6 +147,10 @@ a {
 	border-bottom: 6px solid #dedede;
 	margin-top: 0px;
 	color: #666;
+	&:first-letter {
+		color: @primario;
+		font-size: 1.4em;
+	}
 	/*
 	&:after{
 	    clear: both;
@@ -852,16 +856,17 @@ a.lndtitle {
 	}
 }
 
-.page-header, .line-header {
+.page-header {
 	h1, h2 {
 		color: #666666;
-		&::first-letter {
+		&:first-letter {
 			color: @primario;
 			font-size: 1.4em;
 		}
 	}
-
 }
+
+
 
 .itemid-101, .itemid-188, .itemid-289, .itemid-288 {
 	#sidebar {
