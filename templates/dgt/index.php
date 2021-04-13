@@ -138,7 +138,7 @@ $logo = '<img src="' . htmlspecialchars(JUri::root() . $this->params->get('logoF
 		<?php if ($this->countModules('top-1') || $this->countModules('top-2')) : ?>
 		<div class="header-grey row-fluid">
 			<div class="container-fluid">
-				<div class="span-8 text-left top-1">
+				<div class="span8 text-left top-1">
 					<jdoc:include type="modules" name="top-1" style="xhtml" />
 				</div>
 				<div class="span4 text-right top-2">
