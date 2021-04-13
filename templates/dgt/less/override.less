@@ -12,6 +12,7 @@
 @verde-claro: #9EC2C0;
 @verde-transparente: rgba(3,139,127,0.5);
 @amarillo-us: #C0A66D;
+@primario: #322D66;
 
 body {
 	font-family: @font_family_1;
@@ -27,6 +28,10 @@ body {
 input, textarea, .uneditable-input {
     margin-left: 0;
     width: 100%;
+}
+
+.destacado, .primario {
+	color: @primario;
 }
 
 h1 {
@@ -661,6 +666,7 @@ a {
 	background-position: left center;
 	padding-left: 30px;
 	float: right;
+	padding-top: 7px;
 	form {
 		margin: 2px;
 	}
