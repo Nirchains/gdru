@@ -53,9 +53,12 @@ $assocParam = (JLanguageAssociations::isEnabled() && $params->get('show_associat
 <?php 
 $mail = $this->item->jcfields["1"]->rawvalue;
 $web_personal = $this->item->jcfields["13"]->rawvalue;
-$sisius = $this->item->jcfields["13"]->rawvalue;
+$sisius = $this->item->jcfields["12"]->rawvalue;
 
 echo '<p class="text-center">'.($this->item->jcfields["10"]->rawvalue). '</p>';
+echo '<div class="ico-vinculos">';
+
+//ICONOS: TODO
 if ($mail != '') {
 	echo '<a href="mailto:'. $mail .'">';
 	echo '<img src="/images/miembros/mail.png" alt="'. $mail .'" title="'. $mail .'" width="25" height="25" class="">';
@@ -67,6 +70,9 @@ if ($web_personal != '') {
 if ($web_personal != '') {
 	echo '<a href="' . $web_personal. '"><img src="/images/icons/marca_sisius1.jpeg" alt="marca sisius1" width="25" height="25"></a>';
 }
+
+
+echo "</div>";
 ?>
 
 <?php //echo $this->item->event->beforeDisplayContent; ?>
