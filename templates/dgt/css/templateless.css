@@ -5093,7 +5093,7 @@ a:hover { text-decoration:none; }
 .caja .oliva:hover { background-color:#8b7f03; }
 .caja .amarillous { background-color:rgba(170,147,96,0.8); }
 .caja .amarillous:hover { background-color:#aa9360; }
-.caja .verde1 { background-color:rgba(3,128,139,0.8); }
+.caja .verde1 { background-color:orange; }
 .caja .verde1:hover { background-color:#03808b; }
 .caja .verde2 { background-color:rgba(3,139,96,0.8); }
 .caja .verde2:hover { background-color:#038b60; }
@@ -5317,6 +5317,7 @@ a:hover, a:focus {
   padding-right:30px;
   padding-top:30px;
 }
+.ico-vinculos a:not:first-child { margin-left:5px; }
 @media (max-width: 979px) {
   .nav-collapse .nav > li > a, .nav-collapse .dropdown-menu a { background-color:#efefef; }
   .nav-child { display:none !important; }
