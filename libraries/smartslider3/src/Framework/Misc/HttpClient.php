@@ -6,6 +6,7 @@ use Nextend\Framework\Notification\Notification;
 use Nextend\Framework\Settings;
 use Nextend\Framework\View\Html;
 use Nextend\SmartSlider3\Application\ApplicationSmartSlider3;
+use WP_HTTP_Proxy;
 
 class HttpClient {
 

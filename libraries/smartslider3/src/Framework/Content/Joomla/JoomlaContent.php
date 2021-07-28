@@ -3,6 +3,7 @@
 namespace Nextend\Framework\Content\Joomla;
 
 use ContentHelperRoute;
+use ContentModelArticles;
 use JFactory;
 use Joomla\Component\Content\Administrator\Model\ArticlesModel;
 use JUri;
@@ -23,7 +24,7 @@ class JoomlaContent extends AbstractPlatformContent {
             $a = new ArticlesModel();
         } else {
             require_once(JPATH_ADMINISTRATOR . '/components/com_content/models/articles.php');
-            $a = new \ContentModelArticles();
+            $a = new ContentModelArticles();
         }
 
         $db    = $a->getDbo();
@@ -86,7 +87,7 @@ class JoomlaContent extends AbstractPlatformContent {
             $a = new ArticlesModel();
         } else {
             require_once(JPATH_ADMINISTRATOR . '/components/com_content/models/articles.php');
-            $a = new \ContentModelArticles();
+            $a = new ContentModelArticles();
         }
 
         $db    = $a->getDbo();

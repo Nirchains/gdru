@@ -22,7 +22,7 @@ class JoomlaContentTags extends Select {
 
         if (count($menuItems)) {
             array_shift($menuItems);
-            foreach ($menuItems AS $option) {
+            foreach ($menuItems as $option) {
                 $this->options[$option->id] = $option->title;
             }
         }

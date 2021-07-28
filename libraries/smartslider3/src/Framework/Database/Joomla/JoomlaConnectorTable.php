@@ -4,6 +4,7 @@
 namespace Nextend\Framework\Database\Joomla;
 
 
+use Exception;
 use JDatabaseDriver;
 use Nextend\Framework\Database\AbstractPlatformConnector;
 use Nextend\Framework\Database\AbstractPlatformConnectorTable;
@@ -103,7 +104,7 @@ class JoomlaConnectorTable extends AbstractPlatformConnectorTable {
         // Insert the object into the user profile table.
         try {
             return self::$db->insertObject($this->tableName, $object);
-        } catch (\Exception $e) {
+        } catch (Exception $e) {
             return false;
         }
     }

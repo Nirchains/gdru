@@ -13,6 +13,7 @@ use Nextend\Framework\Platform\Platform;
 use Nextend\Framework\Url\Url;
 use Nextend\Framework\View\Html;
 use Nextend\SmartSlider3\Application\ApplicationSmartSlider3;
+use WP_HTTP_Proxy;
 
 class Api {
 

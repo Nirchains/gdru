@@ -36,7 +36,7 @@ class JoomlaPublishSlider {
         if (count($modules)) {
             $list = '<ul>';
             $IDs  = array();
-            foreach ($modules AS $module) {
+            foreach ($modules as $module) {
                 $IDs[] = intval($module['id']);
 
                 $modulesData[] = array(

@@ -19,6 +19,59 @@ class PlgSystemJce extends JPlugin
         return $this->onContentPrepareForm($form, $data);
     }
 
+    private function redirectMedia()
+    {
+        $app = JFactory::getApplication();
+
+        require_once JPATH_ADMINISTRATOR . '/components/com_jce/helpers/browser.php';
+
+        $id = $app->input->get('fieldid');
+        $mediatype = $app->input->getVar('mediatype', $app->input->getVar('view', 'images'));
+
+        $options = WFBrowserHelper::getMediaFieldOptions(array(
+            'element' => $id,
+            'converted' => true,
+            'mediatype' => $mediatype,
+        ));
+
+        if (!empty($options['url'])) {
+            $app->redirect($options['url']);
+        }
+    }
+
+    private function isEditorEnabled()
+    {
+        $config = JFactory::getConfig();
+        $user = JFactory::getUser();
+
+        if (!JPluginHelper::getPlugin('editors', 'jce')) {
+            return false;
+        }
+
+        if ($user->getParam('editor', $config->get('editor')) !== 'jce') {
+            return false;
+        }
+
+        return true;
+    }
+
+    public function onAfterRoute()
+    {
+        $app = JFactory::getApplication();
+
+        if ($app->input->getCmd('option') == 'com_jce' && $app->input->getCmd('task') == 'mediafield.display' && $app->input->get('fieldid')) {
+            
+            if ($this->isEditorEnabled()) {
+                $params = JComponentHelper::getParams('com_jce');
+
+                if ((bool) $params->get('replace_media_manager', 1) == true) {
+                    // redirect to file browser
+                    $this->redirectMedia();
+                }
+            }
+        }
+    }
+
     public function onAfterDispatch()
     {
         $app = JFactory::getApplication();
@@ -32,7 +85,8 @@ class PlgSystemJce extends JPlugin
 
         // only if enabled
         if ((int) $this->params->get('column_styles', 1)) {
-            $document->addStyleSheet(JURI::root(true) . '/plugins/system/jce/css/content.css?' . $document->getMediaVersion());
+            $hash = md5_file(__DIR__ . '/css/content.css');
+            $document->addStyleSheet(JURI::root(true) . '/plugins/system/jce/css/content.css?' . $hash);
         }
     }
 
@@ -89,14 +143,13 @@ class PlgSystemJce extends JPlugin
             }
         }
 
-        $config = JFactory::getConfig();
-        $user = JFactory::getUser();
-
-        if ($user->getParam('editor', $config->get('editor')) !== 'jce') {
+        // editor not enabled
+        if (!$this->isEditorEnabled()) {
             return true;
         }
 
-        if (!JPluginHelper::getPlugin('editors', 'jce')) {
+        // media replacement disabled
+        if ((bool) $params->get('replace_media_manager', 1) === false) {
             return true;
         }
 
@@ -118,10 +171,6 @@ class PlgSystemJce extends JPlugin
             $type = $field->getAttribute('type');
 
             if (strtolower($type) === 'media') {
-                
-                if ((bool) $params->get('replace_media_manager', 1) === false) {
-                    continue;
-                }
 
                 $group = (string) $field->group;
                 $form->setFieldAttribute($name, 'type', 'mediajce', $group);
@@ -133,7 +182,7 @@ class PlgSystemJce extends JPlugin
                 $hasMedia = true;
             }
         }
-        
+
         // form has a converted media field
         if ($hasMedia) {
             $form->addFieldPath(JPATH_PLUGINS . '/system/jce/fields');
@@ -147,5 +196,35 @@ class PlgSystemJce extends JPlugin
         }
 
         return true;
+    }
+
+    public function onBeforeWfEditorLoad()
+    {
+        $items = glob(__DIR__ . '/templates/*.php');
+
+        $app = JFactory::getApplication();
+
+        if (method_exists($app, 'getDispatcher')) {
+            $dispatcher = JFactory::getApplication()->getDispatcher();
+        } else {
+            $dispatcher = JEventDispatcher::getInstance();
+        }
+
+        foreach($items as $item) {
+            $name = basename($item, '.php');
+
+            $className = 'WfTemplate' . ucfirst($name);
+
+            require_once($item);
+
+			if (class_exists($className)) {
+                // Instantiate and register the event
+				$plugin = new $className($dispatcher);
+
+				if ($plugin instanceof \Joomla\CMS\Extension\PluginInterface) {
+                    $plugin->registerListeners();
+				}
+            }
+        }
     }
 }

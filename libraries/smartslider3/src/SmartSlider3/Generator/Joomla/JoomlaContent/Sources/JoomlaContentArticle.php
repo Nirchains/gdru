@@ -76,7 +76,7 @@ class JoomlaContentArticle extends AbstractGenerator {
         ));
 
         $date = $filterGroup->createRow('date-row');
-        new Text($date, 'sourcedateformat', n2_('Date format'), n2_('m-d-Y'));
+        new Text($date, 'sourcedateformat', n2_('Date format'), 'm-d-Y');
         new Text($date, 'sourcetimeformat', n2_('Time format'), 'G:i');
         new Textarea($date, 'sourcetranslatedate', n2_('Translate date and time'), 'January->January||February->February||March->March', array(
             'width'  => 300,
@@ -290,9 +290,9 @@ class JoomlaContentArticle extends AbstractGenerator {
                 'created_by'        => $result[$i]['created_by_alias'],
                 'con_created_by'    => $result[$i]['con_created_by_alias'],
                 'id'                => $result[$i]['id'],
-                'created_date'      => $this->translate($this->datify($result[$i]['created'], $this->data->get('sourcedateformat', n2_('m-d-Y'))), $translate),
+                'created_date'      => $this->translate($this->datify($result[$i]['created'], $this->data->get('sourcedateformat', 'm-d-Y')), $translate),
                 'created_time'      => $this->translate($this->datify($result[$i]['created'], $this->data->get('sourcetimeformat', 'G:i')), $translate),
-                'publish_up_date'   => $this->translate($this->datify($result[$i]['publish_up'], $this->data->get('sourcedateformat', n2_('m-d-Y'))), $translate),
+                'publish_up_date'   => $this->translate($this->datify($result[$i]['publish_up'], $this->data->get('sourcedateformat', 'm-d-Y')), $translate),
                 'publish_up_time'   => $this->translate($this->datify($result[$i]['publish_up'], $this->data->get('sourcetimeformat', 'G:i')), $translate),
             );
 

@@ -8,6 +8,7 @@ use Nextend\Framework\Api;
 use Nextend\Framework\Model\StorageSectionManager;
 use Nextend\Framework\Notification\Notification;
 use Nextend\SmartSlider3\Application\Admin\AbstractControllerAdmin;
+use WP_HTTP_Proxy;
 
 class ControllerHelp extends AbstractControllerAdmin {
 

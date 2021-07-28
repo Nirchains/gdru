@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2021 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -21,6 +21,8 @@ class WFCleanupPluginConfig
 
         // keep &nbsp;
         $nbsp = (bool) $wf->getParam('editor.keep_nbsp', 1);
+
+        $settings['keep_nbsp'] = $nbsp;
 
         // use named encoding with limited entities set if raw/utf-8 and keep_nbsp === true
         if ($settings['entity_encoding'] === 'raw' && $nbsp) {

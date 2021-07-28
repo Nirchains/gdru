@@ -28,7 +28,7 @@ class JoomlaContentAccessLevels extends Select {
         $this->options['0'] = n2_('All');
 
         if (count($menuItems)) {
-            foreach ($menuItems AS $option) {
+            foreach ($menuItems as $option) {
                 $this->options[$option->id] = $option->name;
             }
         }

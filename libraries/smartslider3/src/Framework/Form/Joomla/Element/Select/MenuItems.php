@@ -18,7 +18,7 @@ class MenuItems extends Select {
         $this->options['0'] = n2_('Default');
 
         if (count($menuItems)) {
-            foreach ($menuItems AS $item) {
+            foreach ($menuItems as $item) {
                 $this->options[$item->id] = '[' . $item->id . '] ' . $item->title;
             }
         }

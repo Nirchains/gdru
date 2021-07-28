@@ -3,12 +3,12 @@
     <name>Smart Slider 3 Library</name>
     <libraryname>smartslider3</libraryname>
     <author>Nextendweb</author>
-    <creationDate>2021-03-09</creationDate>
+    <creationDate>2021-06-08</creationDate>
     <copyright>Copyright (C) 2020 Nextendweb.com. All rights reserved.</copyright>
     <license>http://www.gnu.org/licenses/gpl-3.0.txt GNU General Public License</license>
     <authorEmail>roland@nextendweb.com</authorEmail>
     <authorUrl>https://smartslider3.com</authorUrl>
-    <version>3.4.1.17</version>
+    <version>3.5.0.9</version>
 
     <files>
         <folder>src</folder>

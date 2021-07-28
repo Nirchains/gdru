@@ -37,7 +37,7 @@ $options = array(
     'contentAjaxUrl' => $this->getAjaxUrlContentSearchContent()
 );
 
-Js::addInline('new N2Classes.SlidesManager(' . json_encode($options) . ', ' . json_encode($parameters) . ', ' . (defined('N2_IMAGE_UPLOAD_DISABLE') ? 1 : 0) . ", '" . $this->createAjaxUrl(array('browse/upload')) . "', 'slider" . $sliderObj->sliderId . "');");
+Js::addInline('new _N2.SlidesManager(' . json_encode($options) . ', ' . json_encode($parameters) . ', ' . (defined('N2_IMAGE_UPLOAD_DISABLE') ? 1 : 0) . ", '" . $this->createAjaxUrl(array('browse/upload')) . "', 'slider" . $sliderObj->sliderId . "');");
 
 Js::addGlobalInline('document.documentElement.setAttribute("data-slides", "' . count($slides) . '");');
 ?>
@@ -46,7 +46,8 @@ Js::addGlobalInline('document.documentElement.setAttribute("data-slides", "' . c
     <?php
     if($this->hasBreadcrumbOpener()):
     ?>
-    N2R('documentReady', function ($) {
+    _N2.r(['$', 'documentReady'], function () {
+        var $ = _N2.$;
         var isVisible = false,
             $editorOverLay = $('.n2_admin_editor_overlay'),
             toggle = function () {
@@ -108,12 +109,12 @@ Js::addGlobalInline('document.documentElement.setAttribute("data-slides", "' . c
             endif;
 
             $slidesObj = array();
-            foreach ($slides AS $i => $slide) {
+            foreach ($slides as $i => $slide) {
                 $slidesObj[$i] = new Slide($sliderObj, $slide);
                 $slidesObj[$i]->initGenerator();
             }
 
-            foreach ($slidesObj AS $slideObj) {
+            foreach ($slidesObj as $slideObj) {
                 $slideObj->fillSample();
 
                 $blockSlideBox = new BlockSlideBox($this);

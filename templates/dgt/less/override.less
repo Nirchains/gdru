@@ -21,6 +21,10 @@ body {
 	text-align: justify;
 }
 
+.inihome {
+    margin-top: -207px;
+}
+
 #sidebar {
   text-align: left;
 }
@@ -52,6 +56,8 @@ input, textarea, .uneditable-input {
     padding-top: 20px;
     padding-bottom: 10px;
     margin-top: 40px;
+	padding-left: 20px;
+	padding-right: 20px;
     margin-bottom: 70px;
     border-bottom: 8px solid #dedede;
 	p {
@@ -183,7 +189,7 @@ a {
 	padding-bottom: 15px;
 }
 
-.btn-enlace {
+.btn-enlace-2 {
 	margin-right: 15px;
 	font-size: 17px;
 	letter-spacing: 1px;
@@ -480,97 +486,97 @@ a {
 		}
 	}
 	.magenta {
-		background-color: rgba(139, 3, 83, 0.8);
+		background-color: rgba(139, 3, 83, 0.9);
 		&:hover {
 			background-color: rgba(139, 3, 83, 1);
 	    }
 	}
 	.azul {
-		background-color: rgba(3, 83, 139, 0.8);
+		background-color: rgba(3, 83, 139, 0.9);
 		&:hover {
 			background-color: rgba(3, 83, 139, 1);
 	    }
 	}
 	.naranja1 {
-		background-color: rgba(255, 87, 51 , 0.8);
+		background-color: rgba(255, 87, 51 , 0.9);
 		&:hover {
 			background-color: rgba(255, 87, 51 , 1);
 	    }
 	}
 	.morado {
-		background-color: rgba(59, 3, 139 , 0.8);
+		background-color: rgba(59, 3, 139 , 0.9);
 		&:hover {
 			background-color: rgba(59, 3, 139, 1);
 	    }
 	}
 	.violeta {
-		background-color: rgba(127, 3, 139, 0.8);
+		background-color: rgba(127, 3, 139, 0.9);
 		&:hover {
 			background-color: rgba(127, 3, 139, 1);
 	    }
 	}
 	.oliva {
-		background-color: rgba(139, 127, 3, 0.8);
+		background-color: rgba(139, 127, 3, 0.9);
 		&:hover {
 			background-color: rgba(139, 127, 3, 1);
 	    }
 	}
 	.amarillous {
-		background-color: rgba(170,147,96, 0.8);
+		background-color: rgba(170,147,96, 0.9);
 		&:hover {
 			background-color: rgba(170,147,96, 1);
 	    }
 	}
 	.verde1 {
-		background-color: orange;
+		background-color: rgba(255,165,0, 0.9);
 		&:hover {
-			background-color: rgba(3,128,139, 1);
+			background-color: orange;
 	    }
 	}
 	.verde2 {
-		background-color: rgba(3,139,96, 0.8);
+		background-color: rgba(3,139,96, 0.9);
 		&:hover {
 			background-color: rgba(3,139,96, 1);
 	    }
 	}
 	.naranja2 {
-		background-color: rgba(139,105,3, 0.8);
+		background-color: rgba(139,105,3, 0.9);
 		&:hover {
 			background-color: rgba(3,128,139, 1);
 	    }
 	}
 	.verde3 {
-		background-color: rgba(113,121,129, 0.8);
+		background-color: rgba(113,121,129, 0.9);
 		&:hover {
 			background-color: rgba(113,121,129, 1);
 	    }
 	}
 	.verde4 {
-		background-color: rgba(120,131,113, 0.8);
+		background-color: rgba(120,131,113, 0.9);
 		&:hover {
 			background-color: rgba(120,131,113, 1);
 	    }
 	}
 	.morado2 {
-		background-color: rgba(127,113,131, 0.8);
+		background-color: rgba(127,113,131, 0.9);
 		&:hover {
 			background-color: rgba(127,113,131, 1);
 	    }
 	}
 	.morado3 {
-		background-color: rgba(131,113,113, 0.8);
+		background-color: rgba(131,113,113, 0.9);
 		&:hover {
 			background-color: rgba(131,113,113, 1);
 	    }
 	}
 	.amarillous2 {
-		background-color: rgba(129,126,113,0.8);
+		background-color: rgba(129,126,113,0.9);
 		&:hover {
 			background-color: rgba(129,126,113,1);
 	    }
 	}
 	.azul2 {
-		background-color: rgba(108,135,192,0.8);
+		background-color: rgba(108,135,192,0.9);
 		&:hover {
 			background-color: rgba(108,135,192,1);
 	    }
@@ -626,10 +632,6 @@ a {
 	img {
 		padding-bottom: 20px;
 	}
-}
-
-#particles-js {
-	height: 200px;
 }
 
 .thorarios {
@@ -782,6 +784,7 @@ a.lndtitle {
 .lnd_date {
 	padding-top: 2px;
 }
+	
 .foto-pdi {
 	float: right;
 	max-width: 100px;
@@ -856,7 +859,7 @@ a.lndtitle {
 	}
 }
 
-.page-header {
+//.page-header {
 	h1, h2 {
 		color: #666666;
 		&:first-letter {
@@ -864,7 +867,7 @@ a.lndtitle {
 			font-size: 1.4em;
 		}
 	}
-}
+//}
 
 
 
@@ -910,33 +913,63 @@ a:hover, a:focus {
 	text-decoration: none;
 }
 
-.foto-miembro {
+.foto-miembro img {
 	max-width: 150px;
 	background-color: #efefef;
 	float: right;
-	border: 5px solid #4FB0A9;
+	border: 5px solid #ccc;
 	border-radius: 80px;
+	margin-left: 20px;
+	margin-bottom: 20px;
 }
 
-.blog-foto {
+.blogpdi .pdi-destacado {
+	font-weight: bold;
+	text-transform: uppercase;
+	font-size: 1.1em;
+}
+
+.blog-foto, .blogpdi .leading-0 {
 	padding-bottom: 40px;
-}
-
-.foto-miembro-mail {
-	position: absolute;
-}
-
-.foto-miembro-listado {
-	max-width: 150px;
-	background-color: #efefef;
-	border: 5px solid #4FB0A9;
-	border-radius: 80px;
-	-webkit-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
-	&:hover {
-		border-radius: 70px;
+	position: relative;
+	margin-top: 25px;
+	margin-bottom: 45px;
+	padding-left: 5px;
+	padding-right: 5px;
+    box-shadow: 3px 3px 10px #ccc;
+	.prof-header {
+		min-height: 50px;
+	}
+	.ico-vinculos {
+		position: absolute;
+		bottom: 5px;
+		width: 100%;
+		border-top: 1px solid #eee;
+		padding-top: 5px;
+		margin-left: -5px;
+	}
+	p {
+		min-height: 70px;
+	}
+	.foto-miembro-mail {
+		position: absolute;
+	}
+	
+	.foto-miembro-listado {
+		max-width: 150px;
+		background-color: #efefef;
+		border: 5px solid #ccc;
+		margin-top: -40px;
+		border-radius: 80px;
+		-webkit-transition: all 0.5s ease-in-out;
+		transition: all 0.5s ease-in-out;
+		&:hover {
+			border-radius: 70px;
+		}
 	}
 }
+
+
 
 .header-inner {
 	padding-right: 30px;
@@ -945,15 +978,135 @@ a:hover, a:focus {
 
 .ico-vinculos {
 	a {
-		&:not {
-			&:first-child {
-				margin-left: 5px;
-			}
-		}
+		margin-left: 5px;
 	}
 
 }
 
+.fabrikButtonsContainer .nav {
+	background-color: #666666;
+	li a {
+		&:hover {
+			background: #888888 !important;
+		}
+	}
+	.caret {
+		border-top-color: #fff;
+		border-bottom-color: #fff;
+	}
+}
+
+td.lineas___imagen_linea {
+	max-width: 200px;
+}
+
+td.lineas___titulo, .proyectos___titulo, .publicaciones___titulo  {
+	text-transform: uppercase;
+}
+
+th.proyectos___codigo {
+	width: 100px;
+}
+th.proyectos___fecha {
+	width: 75px;
+}
+
+fieldset.leyenda {
+	border: 1px solid #ddd;
+    padding: 10px;
+    margin: auto;
+}
+
+.modal {
+	#listform_3_com_fabrik_3 {
+		.fabrikFilterContainer, h1 {
+			display: none;
+		}
+	}
+}
+/*
+div[data-filter-row="publicaciones___tipo"] {
+	display: none;
+}*/
+
+.field-label {
+	text-transform: uppercase;
+}
+
+.fabrikDataEmpty {
+	display: none;
+}
+
+.fabrik_actions .btn-group{
+	float: right;
+}
+
+fieldset.leyenda legend {
+    display: inherit;
+    width: auto;
+    padding: 0px 10px;
+    margin-bottom: auto;
+    font-size: 14px;
+    line-height: 14px;
+    color: inherit;
+    border: none;
+    border-bottom: 0px solid #e5e5e5;
+}
+
+.chzn-container-single .chzn-single {
+	padding: 6px;
+	height: inherit;
+}
+.chzn-container-active.chzn-with-drop .chzn-single div b {
+	background-position: -18px 10px;
+}
+.chzn-container-single .chzn-single div b {
+	background-position: 0 8px;
+}
+
+/*Search filters*/
+.search-filters {
+	padding-bottom: 5px;
+	.lbl {
+		color: #66727D;
+		text-align: left;
+		border-bottom: 1px dotted #ccc;
+	}
+	input {
+		width: 93%;
+	}
+	select {
+		width: 99%;
+		padding: 8px 6px;
+	}
+}
+
+
+.fabrik_filter_submit {
+	margin-top: 10px;
+}
+
+.fabrikLabel.control-label {
+	font-weight: bold;
+}
+
+.limit .inputbox {
+	height: 38px;
+}
+
+/*Fabrik forms fields*/
+/*
+.row-fluid [class*="span"].fb_el_publicaciones___revista,
+.row-fluid [class*="span"].fb_el_publicaciones___editorial,
+.row-fluid [class*="span"].fb_el_publicaciones___numero_de_paginas,
+.row-fluid [class*="span"].fb_el_publicaciones___publicaciones___libro,
+.row-fluid [class*="span"].fb_el_publicaciones___publicaciones___autores_del_libro,
+.row-fluid [class*="span"].fb_el_publicaciones___publicaciones___pagina_inicial,
+.row-fluid [class*="span"].fb_el_publicaciones___publicaciones___pagina_final, 
+.row-fluid [class*="span"].fb_el_publicaciones___publicaciones___numero_de_paginas{
+	display: none;
+}
+*/
 @media (min-width: 1100px) {
 	
 }
@@ -1011,10 +1164,6 @@ a:hover, a:focus {
 	}
 	.header-search {
     	padding-left: 200px;
-	}
-	#particles-js {
-    	height: 200px;
-    	margin-top: -200px;
 	}
 	.footer .nav {
 	    text-align: center;

@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2021 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -532,8 +532,12 @@ class JceModelProfile extends JModelAdmin
                     $value = implode(',', filter_var_array($value, FILTER_SANITIZE_STRING));
                     break;
                 case 'area':
-                    if (is_array($value)) {
-                        if (count($value) === 2) {
+                    if (is_array($value)) {                        
+                        // remove empty value
+                        $value = array_filter($value, 'strlen');
+                        
+                        // for simplicity, set multiple area selections as "0"
+                        if (count($value) > 1) {
                             $value = 0;
                         } else {
                             $value = $value[0];
@@ -779,7 +783,7 @@ class JceModelProfile extends JModelAdmin
         $buffer .= "\n" . '<export type="profiles">';
         $buffer .= "\n\t" . '<profiles>';
 
-        $private = array('id', 'checked_out', 'checked_out_time');
+        $validFields = array('name', 'description', 'users', 'types', 'components', 'area', 'device', 'rows', 'plugins', 'published', 'ordering', 'params');
 
         foreach ($ids as $id) {
             $table = $this->getTable();
@@ -794,8 +798,8 @@ class JceModelProfile extends JModelAdmin
             $fields = $table->getProperties();
 
             foreach ($fields as $key => $value) {
-                // skip some stuff
-                if (in_array($key, $private)) {
+                // only allow a subset of fields
+                if (false == in_array($key, $validFields)) {
                     continue;
                 }
 

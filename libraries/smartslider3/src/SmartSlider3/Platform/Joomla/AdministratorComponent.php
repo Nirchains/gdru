@@ -6,6 +6,7 @@ namespace Nextend\SmartSlider3\Platform\Joomla;
 
 use JAccessExceptionNotallowed;
 use JFactory;
+use Joomla\CMS\Factory;
 use JPluginHelper;
 use JText;
 use JUri;
@@ -27,8 +28,8 @@ class AdministratorComponent {
             /**
              * Required for the license activation to work.
              */
-            \Joomla\CMS\Factory::getApplication()
-                               ->setHeader('cross-origin-opener-policy', 'unsafe-none', true);
+            Factory::getApplication()
+                   ->setHeader('cross-origin-opener-policy', 'unsafe-none', true);
 
             $this->loadSystemPlugins();
 
@@ -46,7 +47,8 @@ class AdministratorComponent {
 
             ?>
             <script>
-                N2R('$', function ($) {
+                _N2.r('$', function () {
+                    var $ = _N2.$;
                     var __keepAlive = function () {
                         $.get('<?php echo JURI::current();?>?option=com_smartslider3&keepalive=1', function () {
                             setTimeout(__keepAlive, 300000);

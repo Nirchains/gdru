@@ -1,7 +1,7 @@
 <?php
 
 /**
- * @copyright     Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright     Copyright (c) 2009-2021 Ryan Demmer. All rights reserved
  * @license       GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
@@ -330,8 +330,13 @@ class JoomlalinksMenu extends JObject
     {
         $wf = WFEditorPlugin::getInstance();
         
-        if ($wf->getParam('links.joomlalinks.sef_url', 0)) {
+        if ((bool) $wf->getParam('links.joomlalinks.sef_url', 0)) {
             $url = WFLinkBrowser::route($url);
+        }
+
+        // remove Itemid
+        if ((bool) $wf->getParam('links.joomlalinks.itemid', 0) === false) {
+            $url = WFLinkBrowser::removeItemId($url);
         }
 
         return $url;

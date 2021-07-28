@@ -42,7 +42,7 @@ class JoomlaContentCategories extends Select {
         jimport('joomla.html.html.menu');
         $options = JHTML::_('menu.treerecurse', 1, '', array(), $children, 9999, 0, 0);
         if (count($options)) {
-            foreach ($options AS $option) {
+            foreach ($options as $option) {
                 $this->options[$option->id] = $option->treename;
             }
         }

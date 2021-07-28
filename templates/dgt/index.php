@@ -42,7 +42,6 @@ JHtml::_('bootstrap.framework');
 
 // Add template js
 JHtml::_('script', 'template.js', array('version' => 'auto', 'relative' => true));
-JHtml::_('script', 'particles.min.js', array('version' => 'auto', 'relative' => true));
 JHtml::_('script', 'custom.js', array('version' => 'auto', 'relative' => true));
 
 // Add html5 shiv

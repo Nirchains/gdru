@@ -59,11 +59,5 @@
                 $('.menu-nav').removeClass('slideInUp');
             }
         });
-
-        /*setInterval(function() {
-		    slide_count = ++slide_count % slide_images.length;
-
-		    $('.bg-encabezado').css('background-image', 'url(\'' + slide_images[slide_count] + '\')');
-		  }, 8000);*/
 	})
 })(jQuery);

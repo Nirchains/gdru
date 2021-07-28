@@ -2,7 +2,9 @@
 
 namespace Nextend\SmartSlider3\Platform\Joomla;
 
+use Exception;
 use JEventDispatcher;
+use JFactory;
 use Joomla\CMS\Factory;
 use Joomla\Event\Event;
 use JPluginHelper;
@@ -125,7 +127,7 @@ class JoomlaShim {
 
             try {
                 $callable($event);
-            } catch (\Exception $e) {
+            } catch (Exception $e) {
 
             }
         }
@@ -184,8 +186,8 @@ class JoomlaShim {
             return $dispatcher->trigger('onInitN2Library', $args);
         }
 
-        return \JFactory::getApplication()
-                        ->triggerEvent($eventName, $args);
+        return JFactory::getApplication()
+                       ->triggerEvent($eventName, $args);
     }
 
     public static function loadComContentRoute() {

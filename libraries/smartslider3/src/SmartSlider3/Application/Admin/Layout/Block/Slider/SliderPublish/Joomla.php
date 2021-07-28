@@ -29,7 +29,7 @@ $modules     = $publishData->getModuleList();
         <div class="n2_ss_slider_publish__option">
             <div class="n2_ss_slider_publish__option_label"><?php n2_e('Related modules'); ?></div>
             <div class="n2_ss_slider_publish__related_modules">
-                <?php foreach ($modules AS $module): ?>
+                <?php foreach ($modules as $module): ?>
                     <a class="n2_button n2_button--small n2_button--grey" href="<?php echo $module['url']; ?>" target="_blank"><?php echo $module['label']; ?></a>
                 <?php endforeach; ?>
             </div>

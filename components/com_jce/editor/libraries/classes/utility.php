@@ -1,14 +1,14 @@
 <?php
 
 /**
- * @copyright    Copyright (c) 2009-2020 Ryan Demmer. All rights reserved
+ * @copyright    Copyright (c) 2009-2021 Ryan Demmer. All rights reserved
  * @license    GNU/GPL 2 or later - http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  * JCE is free software. This version may have been modified pursuant
  * to the GNU General Public License, and as distributed it includes or
  * is derivative of works licensed under the GNU General Public License or
  * other free or open source software licenses
  */
-defined('_JEXEC') or die('RESTRICTED');
+defined('JPATH_PLATFORM') or die('RESTRICTED');
 
 /* Set internal character encoding to UTF-8 */
 if (function_exists('mb_internal_encoding')) {
@@ -559,18 +559,25 @@ abstract class WFUtility
 
         if (isset($matches[2])) {
             $unit = $matches[2];
+
+            // extract first character only, eg: g, m, k
+            if ($unit) {
+                $unit = strtolower($unit[0]);
+            }
         }
 
+        $value = intval($value);
+
         // Convert to bytes
-        switch (strtolower($unit[0])) {
+        switch ($unit) {
             case 'g':
-                $value = intval($value) * 1073741824;
+                $value = $value * 1073741824;
                 break;
             case 'm':
-                $value = intval($value) * 1048576;
+                $value = $value * 1048576;
                 break;
             case 'k':
-                $value = intval($value) * 1024;
+                $value = $value * 1024;
                 break;
         }
 
